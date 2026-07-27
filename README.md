@@ -38,6 +38,10 @@ dist\WifiTexnik.exe
 Build prosesi üçün internet bağlantısı lazımdır. Hazır EXE işləyərkən Python
 tələb etmir.
 
+GitHub-dakı **Build Windows EXE** workflow-u da hər dəyişiklikdə avtomatik
+`WifiTexnik-Windows` adlı artifact yaradır. Actions bölməsindən uğurlu build-i
+açıb artifact-i endirmək mümkündür.
+
 ## Test
 
 Repo qovluğunda:
