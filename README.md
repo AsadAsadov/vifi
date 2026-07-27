@@ -1,61 +1,62 @@
-# Wifi-Brute
-A tool to crack a wifi password with a help of wordlist. This may take long to crack a wifi depending upon number of passwords your wordlist contains.
+# Wi‑Fi Texnik
 
-# Tutorial / Youtube
+Windows üçün təhlükəsiz Wi‑Fi, lokal şəbəkə, internet və ilkin GPON
+diaqnostika tətbiqi.
 
+## İmkanlar
 
-  
-* Watch the tutotrial on youtube.
+- Yaxın Wi‑Fi access point-lərini SSID, BSSID, siqnal, kanal, radio və
+  təhlükəsizlik növü ilə göstərir.
+- Qoşulu Wi‑Fi, default gateway, `1.1.1.1`, TCP 443 və DNS testləri aparır.
+- Paket itkisini və orta ping-i hesablayır.
+- Problemi lokal Wi‑Fi/LAN, gateway, WAN/provayder və ya DNS istiqamətində
+  təsnif edir.
+- ONT panelindən götürülmüş optik RX və LOS məlumatına ilkin qiymət verir.
+- Texniki nəticəni UTF‑8 mətn hesabatı kimi saxlayır.
+- Default gateway-in modem panelini bir kliklə açır.
 
+Tətbiq Wi‑Fi şifrəsi sınamır, yaxın şəbəkələrə qoşulmağa cəhd etmir və
+Windows-da saxlanmış şəbəkə profillərini silmir.
 
-* https://rumble.com/embed/v26ifyc/?pub=1teq9a
-* Check out the latest Blog on Wifi Hacking with WifiBrute
-* [Hack Wifi In  A Click](https://www.cyox2.com/2023/11/wifi-hacking-hacking-your-neeighbours.html)
-# Service
-* Get a paid worlds best top rated hacking course dm me on instagram @coding_memz
-* Get easy and working wifi hacking course dm me on instagram @coding_memz
-* Get 14M password lost containing worlds top used passwords dm me on instagram @coding_memz
+## Birbaşa işə salmaq
 
-# Update
-This tool is no longer updated, i have created ore advanced and fast version of it for windows. If you are intrested to buy dm me on telegram @coding_memz
-![Screenshot 2023-07-13 151642](https://github.com/Cyber-Dioxide/Wifi-Brute/assets/93708296/10954859-f9d4-4312-8e2e-a64a89149532)
+1. Windows-a Python 3.11 və ya daha yeni versiya quraşdır.
+2. Quraşdırmada **Add Python to PATH** seçimini aktiv et.
+3. `run_windows.bat` faylını aç.
 
-# 🙌 Donate to Support Development
+Tətbiqin işləməsi üçün əlavə Python paketi lazım deyil.
 
-If you find this tool useful and want to support future updates, you can donate in crypto:
+## EXE hazırlamaq
 
-    BTC: 364wCdw46JBGwtk674N4Cj87ErWNVTNvBc
+`build_windows.bat` faylını aç. Skript ayrıca `.venv` yaradacaq, PyInstaller
+quraşdıracaq və nəticəni burada verəcək:
 
-    ETH: 0x4d2c6d55a7ab2874ef5fd172d78da6e553ab9126
+```text
+dist\WifiTexnik.exe
+```
 
-    USDT (TRC20): TSgLpf9AawGLnHYRFhp5XqNgLVk7Y7kZBg
+Build prosesi üçün internet bağlantısı lazımdır. Hazır EXE işləyərkən Python
+tələb etmir.
 
-    SOL: 3VGJAH5n8NJFKFoC4GPZWay8QJrL5upd33i7WHMpcGpv
+## Test
 
-    LTC: MASRzRJPy9UxuagdXqzcY9N89NvPMUreNj
+Repo qovluğunda:
 
-Your support helps keep the project alive and free for everyone. Thank you!
+```powershell
+py -3 -m unittest discover -s tests -v
+```
 
-# Telegram
-* Join Telegram Channel https://t.me/cyox2
-* Contact me on [Telegram](https://www.cyox2.com/p/contact.html)
+## GPON barədə
 
-  
-# Usage
+Wi‑Fi siqnalından fiberin optik RX gücünü hesablamaq mümkün deyil. RX/TX və
+LOS məlumatı ONT/modem panelindən və ya provayderin OLT/ACS sistemindən
+alınmalıdır. Fiziki qırılmanın yerini dəqiq müəyyənləşdirmək üçün OTDR
+lazımdır.
 
-1. git clone https://github.com/Cyber-Dioxide/Wifi-Brute
-2. cd Wifi-Brute
-3. chmod +x *
-4. python3 wifi-brute.py --help
-5. python3 wifi-brute.py <worlist>
-6. python3 wifi-brute.py (will use defualt wordlist passwords.txt)
+Tətbiqdəki RX hədləri ümumi orientirdir; provayder və ONT modelinə görə
+dəyişə bilər.
 
-! Enjoy !
+## Məxfilik
 
-# Screenshot
-![Screenshot (192)](https://user-images.githubusercontent.com/93708296/148902317-f1dc07af-0af3-4648-97b1-9c9dd79163f1.png)
-![Screenshot (282)](https://user-images.githubusercontent.com/93708296/183288408-f1b6dd99-b83b-44b0-8bb1-c807040bf08a.png)
-
-
-# Help
-For any support/help iam mostly active on Instagram @cyber_dioxide , @coding_memz
+Bütün testlər lokal kompüterdə aparılır. Tətbiq hesabatı və şəbəkə
+məlumatlarını heç bir serverə göndərmir.
